@@ -1,0 +1,46 @@
+.Header{
+    display: flex ;
+    justify-content: space-between;
+    padding: 1rem;
+    width: 100%;
+
+}
+
+
+
+.left-logo{
+    width: 4rem;
+    max-height: 4rem;
+    
+}
+
+
+
+.logoWithText{
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    
+}
+
+.logoWithText>span{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+}
+.Header>ul{
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+.Header>ul>li{
+    font-size: large;
+    color: white;
+}
+
+.Header>ul>li:hover{
+    cursor: pointer;
+    color: var(--orange);
+}

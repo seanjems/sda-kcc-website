@@ -1,31 +1,20 @@
-import React from "react";
 import "./App.css";
-import Navbar from "./components/Navbar";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./components/pages/Home";
-import SignUp from "./components/pages/SignUp";
-import Footer from "./components/Footer";
-import Departments from "./components/pages/Departments";
-import Families from "./components/pages/Families";
-import Media from "./components/pages/Media";
-import More from "./components/pages/More";
 
+import Departments from "./components/Departments/Departments";
+import Footer from "./components/Footer/Footer";
+import Hero from "./components/HeroSection/Hero";
+import Offertory from "./components/Offertory/Offertory";
+import SocialMedia from "./components/SocialMedia/SocialMedia";
+import { Link } from "react-scroll";
 function App() {
   return (
-    <>
-      <Router>
-        <Navbar />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/departments" exact component={Departments} />
-          <Route path="/families" exact component={Families} />
-          <Route path="/sign-up" exact component={SignUp} />
-          <Route path="/more" exact component={More} />
-          <Route path="/media" exact component={Media} />
-        </Switch>
-        <Footer />
-      </Router>
-    </>
+    <div className="App">
+      <Hero />
+      <SocialMedia />
+      <Departments />
+      <Offertory />
+      <Footer />
+    </div>
   );
 }
 

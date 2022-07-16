@@ -1,0 +1,11 @@
+
+.read-more-button {
+    display: inline-block;
+    margin-left: 3px;
+    color: var(--orange);
+    cursor: pointer;
+  }
+  
+  .read-more-button:hover {
+    color: orangered;
+  }
