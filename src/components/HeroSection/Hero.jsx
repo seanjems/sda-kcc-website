@@ -4,7 +4,10 @@ import Header from "../Header/Header";
 import LogoClean from "../../assets/SDA-Logo.png";
 import hero_image_back from "../../assets/hero_image_back.png";
 import hero_image from "../../assets/img1.png";
+
+import { motion } from "framer-motion";
 const Hero = () => {
+  const transition = { type: "spring", duration: 4 };
   return (
     <div className="Hero" id="home">
       <div className="left-h">
@@ -12,7 +15,11 @@ const Hero = () => {
         <div className="blur heroBlur"></div>
         {/* Thank you for visiting text */}
         <div className="animating-ad">
-          <div></div>
+          <motion.div
+            initial={{ right: "8px" }}
+            whileInView={{ left: "8px" }}
+            transition={{ ...transition, type: "tween" }}
+          ></motion.div>
           <span>
             Thank you for visiting Sda Kampala central. You are welcome.
           </span>
@@ -67,8 +74,22 @@ const Hero = () => {
       <div className="right-h">
         <button className="new-btn">Login</button>
         <img src={hero_image} alt="" className="hero-image" />
-        <img src={hero_image_back} alt="" className="hero-image-back" />
-        <img src={LogoClean} alt="" className="logoClean" />
+        <motion.img
+          src={hero_image_back}
+          alt=""
+          className="hero-image-back"
+          initial={{ left: "0rem" }}
+          whileInView={{ left: "-13rem" }}
+          transition={transition}
+        />
+        <motion.img
+          src={LogoClean}
+          alt=""
+          className="logoClean"
+          initial={{ right: "-3rem" }}
+          whileInView={{ right: "2rem" }}
+          transition={{ ...transition, type: "tween ", duration: 3 }}
+        />
       </div>
     </div>
   );
