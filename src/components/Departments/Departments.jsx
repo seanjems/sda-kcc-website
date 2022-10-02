@@ -6,9 +6,10 @@ import ReadMoreTag from "../Reusables/ReadMoreTextComponent/ReadMoreTag";
 import { departmentData } from "../../data/departmentData";
 import ArrowLeft from "../../assets/leftArrow.png";
 import ArrowRight from "../../assets/rightArrow.png";
-
+import { motion } from "framer-motion";
 const Departments = () => {
   const [activeDepartment, setActiveDepartment] = useState(0);
+  const transition = { type: "spring", duration: 4 };
 
   return (
     <div className="Departments" id="departments">
@@ -40,7 +41,7 @@ const Departments = () => {
         </div>
         <div className="department-r">
           <div className="arrows">
-            <img
+            <motion.img
               src={ArrowLeft}
               alt=""
               onClick={() => {
@@ -49,8 +50,11 @@ const Departments = () => {
                   activeDepartment - 1 < 0 ? allDep : activeDepartment - 1;
                 setActiveDepartment(next);
               }}
+              initial={{ opacity: 0.5, x: -100, scale: 2 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ ...transition, duration: 2 }}
             />
-            <img
+            <motion.img
               src={ArrowRight}
               alt=""
               onClick={() => {
@@ -59,11 +63,24 @@ const Departments = () => {
                   activeDepartment + 1 > allDep ? 0 : activeDepartment + 1;
                 setActiveDepartment(next);
               }}
+              initial={{ opacity: 0.5, x: 100, scale: 2 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ ...transition, duration: 2 }}
             />
           </div>
           <div className="articleImageContainer">
-            <div className="backDivSolid"></div>
-            <div className="backDivStroke"></div>
+            <motion.div
+              className="backDivSolid"
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ ...transition, type: "tween", duration: 2 }}
+            ></motion.div>
+            <motion.div
+              className="backDivStroke"
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ ...transition, type: "tween", duration: 2 }}
+            ></motion.div>
             <div className="articleImage">
               <img src={departmentData[activeDepartment].image} alt="" />
             </div>
