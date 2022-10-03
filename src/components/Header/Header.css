@@ -44,3 +44,34 @@
     cursor: pointer;
     color: var(--orange);
 }
+.mobileMenuBtn{
+    display: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: .5rem;
+    background-color: var(--appColor);
+    position: fixed;
+    top: 2rem;
+    right:2rem;
+}
+@media screen and (max-width:768px) {
+.Header>:nth-child(2){
+    position: fixed;
+    right: 2rem;
+    z-index: 99;
+}
+.Header>ul{
+    flex-direction: column ;
+    background-color: var(--appColor);
+    padding: 2rem;
+    position: fixed;
+    right: 2rem;
+    top: 4.5rem;
+    z-index: 999999;
+}
+
+.mobileMenuBtn{
+    display: block;
+}
+
+}

@@ -147,3 +147,63 @@
     height: 25rem;
     left: 0;
 }
+
+@media screen and (max-width:768px) {
+    .Hero{
+        flex-direction: column;
+    }
+    .heroBlur{
+        width: 14rem;
+    }
+    .animating-ad{
+        margin-top: 0;
+        font-size: small;
+        align-self: center;
+        transform: scale(0.7);
+        width: 120%;
+    }
+    .heroHeading{
+        align-items: center;
+        font-size: xx-large;
+        justify-content: center;
+        padding: 1rem;
+        text-align: center;
+    }
+    .figures>div>span:nth-of-type(1){
+        font-size: large;
+    }
+    .figures>div>span:nth-of-type(2){
+        font-size: small;
+    }
+    .figures{
+        font-size: 1rem;
+        gap: 1rem;
+    }
+.right-h{
+    position: relative;
+    background-color: transparent;
+}
+.right-h>img{
+    position: relative;
+}
+.right-h>button{
+    width: 80%;
+    justify-content: center;
+}
+
+.hero-button{
+    justify-content: center;
+}
+.right-h>img:nth-of-type(1){
+    left: 5rem;
+    margin-bottom: 6rem;
+}
+.right-h>img:nth-of-type(2){
+    position: absolute;
+    left: 0 !important;
+}
+.logoClean{
+    display: none;
+}
+
+}
