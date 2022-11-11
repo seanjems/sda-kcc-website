@@ -164,7 +164,7 @@ const EnvelopeCart = ({ paymentMode, setPaymentMode }) => {
                 </tbody>
                 <tfoot>
                   <tr className="py-2">
-                    <th colSpan={3} className="display-6">
+                    <th colSpan={2} className="display-6">
                       Totals
                     </th>
                     <th colSpan={2} className="display-6">

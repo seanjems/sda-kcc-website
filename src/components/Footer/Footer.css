@@ -54,6 +54,7 @@
   
   .footer-link-wrapper {
     display: flex;
+    gap: 1rem;
   }
   
   .footer-link-items {

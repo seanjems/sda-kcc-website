@@ -9,9 +9,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import EnvelopeCart from "./components/Offertory/EnvelopeCart";
 import { useState } from "react";
-import { CartProvider } from "react-use-cart";
+import { CartProvider, useCart } from "react-use-cart";
+import { isElement } from "lodash";
+
 function App() {
   const [paymentMode, setPaymentMode] = useState();
+  const { isEmpty } = useCart();
   return (
     <div className="App">
       <CartProvider>
@@ -19,8 +22,17 @@ function App() {
         <SocialMedia />
         <Departments />
 
-        <Offertory setPaymentMode={setPaymentMode} paymentMode={paymentMode} />
-
+        {isEmpty ? (
+          <Offertory
+            setPaymentMode={setPaymentMode}
+            paymentMode={paymentMode}
+          />
+        ) : (
+          <EnvelopeCart
+            paymentMode={paymentMode}
+            setPaymentMode={setPaymentMode}
+          />
+        )}
         <Footer />
       </CartProvider>
     </div>

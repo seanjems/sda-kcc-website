@@ -23,7 +23,7 @@ const Offertory = ({ setPaymentMode, paymentMode }) => {
           />
         ) : (
           <div className="offertoryCards">
-            <div className="blur offertoryBlur1"></div>
+            {/* <div className="blur offertoryBlur1"></div> */}
             <div className="blur offertoryBlur2"></div>
             <div className="centralCard py-3 px-3 shadow ">
               <span className="paymentHeading my-2">Select payment method</span>

@@ -6,6 +6,7 @@ import hero_image_back from "../../assets/hero_image_back.png";
 import hero_image from "../../assets/img1.png";
 
 import { motion } from "framer-motion";
+import { Link } from "react-scroll";
 const Hero = () => {
   const transition = { type: "spring", duration: 4 };
   return (
@@ -64,15 +65,22 @@ const Hero = () => {
 
         {/* Buttons */}
         <div className="hero-button">
-          <button className="new-btn">Connect</button>
-          <button className="new-btn">E-giving</button>
+          <a href="https://social.kampalacentraladventist.org/home">
+            <button className="new-btn">Connect</button>
+          </a>
+
+          <Link to="offertory" spy={true} smooth={true}>
+            <button className="new-btn">E-giving</button>
+          </Link>
         </div>
 
         {/* Right side */}
       </div>
 
       <div className="right-h">
-        <button className="new-btn">Login</button>
+        <a href="https://social.kampalacentraladventist.org">
+          <button className="new-btn">Login</button>
+        </a>
         <img src={hero_image} alt="" className="hero-image" />
         <motion.img
           src={hero_image_back}

@@ -45,7 +45,7 @@
 }
 
 
-.postsCard>div:nth-child(3){
+.postsCard>div:nth-child(3)>div{
     display: flex;
     align-self: flex-end;
     grid-area: 1rem;
