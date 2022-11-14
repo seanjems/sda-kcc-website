@@ -71,7 +71,7 @@ const data = [
   {
     id: 9,
     img: campoffering,
-    title: "Campmeeting offering",
+    title: "Campmeeting Expenses",
     desc: "",
     price: 0,
   },

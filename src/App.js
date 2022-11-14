@@ -11,30 +11,43 @@ import EnvelopeCart from "./components/Offertory/EnvelopeCart";
 import { useState } from "react";
 import { CartProvider, useCart } from "react-use-cart";
 import { isElement } from "lodash";
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+import { NotificationsProvider } from "@mantine/notifications";
 
 function App() {
   const [paymentMode, setPaymentMode] = useState();
   const { isEmpty } = useCart();
   return (
     <div className="App">
-      <CartProvider>
-        <Hero />
-        <SocialMedia />
-        <Departments />
+      <NotificationsProvider position="top-right" zIndex={2077}>
+        <CartProvider>
+          <PayPalScriptProvider
+            options={{
+              "client-id":
+                "AezVIu7szn3_vKJ_uQHbYn-sKA1ogFURTu7h0Q7BUexSj9SK-N8fhDaQlhijAJmhNr9ALqv6aDHdT3dT",
+              components: "buttons",
+              currency: "USD",
+            }}
+          >
+            <Hero />
+            <SocialMedia />
+            <Departments />
 
-        {isEmpty ? (
-          <Offertory
-            setPaymentMode={setPaymentMode}
-            paymentMode={paymentMode}
-          />
-        ) : (
-          <EnvelopeCart
-            paymentMode={paymentMode}
-            setPaymentMode={setPaymentMode}
-          />
-        )}
-        <Footer />
-      </CartProvider>
+            {isEmpty ? (
+              <Offertory
+                setPaymentMode={setPaymentMode}
+                paymentMode={paymentMode}
+              />
+            ) : (
+              <EnvelopeCart
+                paymentMode={paymentMode}
+                setPaymentMode={setPaymentMode}
+              />
+            )}
+            <Footer />
+          </PayPalScriptProvider>
+        </CartProvider>
+      </NotificationsProvider>
     </div>
   );
 }
