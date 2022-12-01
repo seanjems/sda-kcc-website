@@ -5,6 +5,8 @@ import construction from "../../assets/images/construction.jpg";
 import campexpenses from "../../assets/images/campexpenses.jpg";
 import campoffering from "../../assets/images/campOffering.jpg";
 import kirekahospital from "../../assets/images/kirekahospital.jpg";
+import lugogo from "../../assets/images/lugogo.JPG";
+import coperateShow from "../../assets/images/coperateShow.JPG";
 import lunch from "../../assets/images/lunch.jpg";
 import Welfare from "../../assets/images/welfare.jpg";
 import communication from "../../assets/images/communication.jpg";
@@ -12,6 +14,20 @@ import others from "../../assets/images/others.jpg";
 import lcb from "../../assets/images/localchurchbudget.jpg";
 
 const data = [
+  {
+    id: 1,
+    img: lugogo,
+    title: "lugogo",
+    desc: "Lugogo Show - AOC eTicket",
+    price: 0,
+  },
+  {
+    id: 1,
+    img: coperateShow,
+    title: "imperial",
+    desc: "Imperial Royale Show - AOC eTicket",
+    price: 0,
+  },
   {
     id: 1,
     img: Donation,

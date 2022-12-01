@@ -29,7 +29,9 @@ const OffertoryCard = ({
         style={{ height: "14rem", objectFit: "cover" }}
       />
       <div className="card-body">
-        <h5 className="card-title">{fieldTitle}</h5>
+        <h5 className="card-title">
+          {fieldTitle.charAt(0).toUpperCase() + fieldTitle.slice(1)}
+        </h5>
         <p className="card-text">{desc}</p>
         {/* <a href="#" className="btn btn-primary" onClick={() => setOpened(true)}>
           Add to Envelope
